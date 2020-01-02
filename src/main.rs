@@ -25,4 +25,9 @@ fn main() {
         println!("{:?}", e);
     });
 
+    let last = match anchor.as_node().children().text_nodes().last() {
+        Some(x) => x.as_node().text_contents(),
+        None => String::from(""),
+    };
+    println!("{:?}", last);
 }
