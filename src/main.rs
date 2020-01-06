@@ -30,4 +30,14 @@ fn main() {
         None => String::from(""),
     };
     println!("{:?}", last);
+
+    let last2 = anchor.as_node().children().text_nodes().last().unwrap();
+    let last3 = last2.borrow();
+    println!("{:?}", last3);
+
+    let last4 = match anchor.as_node().children().text_nodes().last() {
+        Some(x) => x.borrow(),
+        None => String::from(""),
+    };
+    println!("{:?}", last);
 }
