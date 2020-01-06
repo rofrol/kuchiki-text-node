@@ -36,7 +36,7 @@ fn main() {
     println!("{:?}", last3);
 
     let last4 = match anchor.as_node().children().text_nodes().last() {
-        Some(x) => x.borrow(),
+        Some(x) => x.borrow().clone(),
         None => String::from(""),
     };
     println!("{:?}", last);
