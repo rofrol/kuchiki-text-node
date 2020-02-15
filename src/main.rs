@@ -37,6 +37,7 @@ fn main() {
 
     let last4 = match anchor.as_node().children().text_nodes().last() {
         // https://stackoverflow.com/questions/47060266/error-while-trying-to-borrow-2-fields-from-a-struct-wrapped-in-refcell/47060530#47060530
+        // `match` arms have incompatible types
         //Some(x) => &*x.borrow(),
         Some(x) => x.borrow().clone(),
         None => String::from(""),
